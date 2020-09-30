@@ -3,12 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { InformateComponent } from './informate/informate.component';
-import { TemasInteresComponent } from './temas-interes/temas-interes.component';
-import { ConocerOpinionComponent } from './conocer-opinion/conocer-opinion.component';
+import { ReactiveFormsModule } from "@angular/forms";
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { InformateComponent } from './components/informate/informate.component';
+import { TemasInteresComponent } from './components/temas-interes/temas-interes.component';
+import { ConocerOpinionComponent } from './components/conocer-opinion/conocer-opinion.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { HomeComponent } from './sections/home/home.component';
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -17,11 +26,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     InformateComponent,
     TemasInteresComponent,
-    ConocerOpinionComponent
+    ConocerOpinionComponent,
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     NgbModule
   ],
   providers: [],

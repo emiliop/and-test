@@ -1,0 +1,39 @@
+<div>
+    <div class="row">
+        <div class="col-7">
+            <h2>Queremos conocer tu opinion</h2>
+            <div class="">
+                <p>Falta un dia</p>
+                <p>Unete al pacto por colombia</p>
+                <p>Presidencia de la republica</p>
+                <p>534 colombianos participando</p>
+            </div>
+            <div class="">
+                <p>Falta un dia</p>
+                <p>Unete al pacto por colombia</p>
+                <p>Presidencia de la republica</p>
+                <p>534 colombianos participando</p>
+            </div>
+            <<div class="">
+                <p>Falta un dia</p>
+                <p>Unete al pacto por colombia</p>
+                <p>Presidencia de la republica</p>
+                <p>534 colombianos participando</p>
+            </div>
+            <a href="">Conocer otros ejercicios de participacion</a>
+        </div>
+        <div class="col-5">
+            <form [formGroup]="opinionForm" (ngSubmit)="onSubmit(opinionForm.value)">
+                <h3>Cuentanos</h3>
+                <h4>Como podemos mejorar GOV.CO?</h4>
+                <p>Estamos construyendo este espacio pata ti y tu opinion nos ayuda a crecer</p>
+                <textarea class="form-control" formControlName="opinions" rows="5" placeholder="Escribe aquí tu opinión" id="textarea-example" maxlength="300">
+                </textarea>
+                <button  [disabled]="opinionForm.invalid" class="btn btn-primary d-block mx-auto" type="submit">
+                    <i class="fas fa-search"></i>
+                    Buscar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
