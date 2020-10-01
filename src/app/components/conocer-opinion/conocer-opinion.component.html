@@ -1,28 +1,21 @@
-<div>
+<div class="opinion-section">
     <div class="row">
         <div class="col-7">
             <h2>Queremos conocer tu opinion</h2>
-            <div class="">
-                <p>Falta un dia</p>
-                <p>Unete al pacto por colombia</p>
-                <p>Presidencia de la republica</p>
-                <p>534 colombianos participando</p>
-            </div>
-            <div class="">
-                <p>Falta un dia</p>
-                <p>Unete al pacto por colombia</p>
-                <p>Presidencia de la republica</p>
-                <p>534 colombianos participando</p>
-            </div>
-            <<div class="">
-                <p>Falta un dia</p>
-                <p>Unete al pacto por colombia</p>
-                <p>Presidencia de la republica</p>
-                <p>534 colombianos participando</p>
-            </div>
+
+            <div class="" *ngFor="let participation of participations">
+                <div>
+                    <p>{{participation.status}}</p>
+                    <p>{{participation.title}}</p>
+                    <p>{{participation.author}}</p>
+                    <p>{{participation.participants}} colombianos participando</p>
+                </div>
+                <br>
+              </div>
+            
             <a href="">Conocer otros ejercicios de participacion</a>
         </div>
-        <div class="col-5">
+        <div class="col-5 card govco-card">
             <form [formGroup]="opinionForm" (ngSubmit)="onSubmit(opinionForm.value)">
                 <h3>Cuentanos</h3>
                 <h4>Como podemos mejorar GOV.CO?</h4>

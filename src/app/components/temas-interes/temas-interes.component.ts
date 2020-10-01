@@ -8,7 +8,7 @@ import { ContentDataService } from 'src/app/services/content-data/content-data.s
 })
 export class TemasInteresComponent implements OnInit {
 
-  info
+  information
 
   constructor(
     private contentDataService: ContentDataService,
@@ -20,8 +20,8 @@ export class TemasInteresComponent implements OnInit {
 
   retrieveOpinions() {
     this.contentDataService.getInfo().subscribe((data: any[])=>{
-      this.info=data;
-      console.log(this.info)
+      this.information=data;
+      console.log(this.information)
     })
   }
 

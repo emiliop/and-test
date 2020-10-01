@@ -1,33 +1,27 @@
-<div>
-    <h2>Infórmate</h2>
-    <div class="card govco-card ">
-        <img src="/assets/images/colombiaco.png" class="card-img govco-card-image govco-card-image-top" alt="..." />
-        <div class="card-body">
-          <p>Esta card contiene una imagen y una breve descripción </p>
+<div class="interes-section">
+  <h2>Otros temas de tu interes</h2>
+  <div class="row col-12 d-flex m-0 px-5">
+
+      <div class="col-md-6 p-2" *ngFor="let info of information; let nume = index">
+        <div class="card govco-card">
+          <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+              <img class="card-img govco-card-image govco-card-image-left ml-5 mt-4" src="/assets/images/{{info.image}}" alt="..." />
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-8">
+              <div class="card-header govco-card-header justify-content-start">
+                <a>{{info.title}}</a>
+              </div>
+              <div class="card-body">
+                <p>{{info.subtitle}}</p>
+                <a>{{info.link}}</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card govco-card ">
-        <img src="/assets/images/colombiaco.png" class="card-img govco-card-image govco-card-image-top" alt="..." />
-        <div class="card-body">
-          <p>Esta card contiene una imagen y una breve descripción </p>
-        </div>
-      </div>
-      <div class="card govco-card ">
-        <img src="/assets/images/colombiaco.png" class="card-img govco-card-image govco-card-image-top" alt="..." />
-        <div class="card-body">
-          <p>Esta card contiene una imagen y una breve descripción </p>
-        </div>
-      </div>
-      <div class="card govco-card ">
-        <img src="/assets/images/colombiaco.png" class="card-img govco-card-image govco-card-image-top" alt="..." />
-        <div class="card-body">
-          <p>Esta card contiene una imagen y una breve descripción </p>
-        </div>
-      </div>
-      <div class="card govco-card ">
-        <img src="/assets/images/colombiaco.png" class="card-img govco-card-image govco-card-image-top" alt="..." />
-        <div class="card-body">
-          <p>Esta card contiene una imagen y una breve descripción </p>
-        </div>
-      </div>
+
+
+    </div>
 </div>
+

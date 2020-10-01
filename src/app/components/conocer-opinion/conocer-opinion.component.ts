@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validator, Validators } from '@angular/forms';
+import { ContentDataService } from 'src/app/services/content-data/content-data.service';
 import { OpinionService } from 'src/app/services/opinion/opinion.service';
 import { Opinion } from 'src/app/models/opinion/opinion.model';
 
@@ -10,10 +11,12 @@ import { Opinion } from 'src/app/models/opinion/opinion.model';
 })
 export class ConocerOpinionComponent implements OnInit {
 
+  participations;
   opinionForm: FormGroup;
   opinions: Opinion[];
 
   constructor(
+              private contentDataService: ContentDataService,
               private opinionService: OpinionService,
               private formOpinionBuilder: FormBuilder
               ) { 
@@ -26,12 +29,20 @@ private buildOpinionForm() {
     });
 }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.retrieveParticipations();
   }
 
   onSubmit(data) {
     console.log(data);
     this.createOpinions(data);    
+}
+
+retrieveParticipations() {
+  this.contentDataService.getParticipations().subscribe((data: any[])=>{
+    this.participations=data;
+    console.log(this.participations)
+  })
 }
 
   createOpinions(opinions: Opinion){
