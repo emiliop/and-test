@@ -42,11 +42,16 @@ retrieveParticipations() {
   this.contentDataService.getParticipations().subscribe((data: any[])=>{
     this.participations=data;
     console.log(this.participations)
+    
   })
 }
 
   createOpinions(opinions: Opinion){
-    this.opinionService.createOpinion(opinions);
+    this.opinionService.createOpinion(opinions).then(() => {
+      console.log('Created new opinion successfully!');
+      alert("Su opinion se ha recibido exitosamente")
+    });
+    
 }
 
 }
