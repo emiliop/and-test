@@ -1,6 +1,18 @@
 # and-test
 Prueba angular para la AND
 
+*Instalacion
+
+-Instalar node.js https://nodejs.org/en/download/
+
+-clonar repositorio
+
+-en la carpeta raiz, instalar angular vli con el comando npm install -g @angular/cli
+
+-actualizar las dependencias npm install
+
+-ejecutar el servidor ng serve --open
+
 
 El projecto esta divido en las siguientes carpetas:
 
